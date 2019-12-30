@@ -11,7 +11,9 @@ const io = socketio(server);
 io.on("connection", socket => {
   console.log("We have a new conncection");
 
-  socket.on("disconnect", () => {});
+  socket.on("disconnect", () => {
+    console.log("User has left")
+  });
 });
 
 app.use(routes(express));
